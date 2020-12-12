@@ -1,6 +1,4 @@
 <<<<<<< HEAD
-# projetos.php
-# projetos.php
 =======
 # Projeto-integrador
 
