@@ -1,0 +1,41 @@
+CREATE DATABASE PROJECT;
+
+USE PROJECT;
+
+create table Aluno(
+	ra_aluno varchar(6) not null,
+	nome varchar (40) not null,
+    senha varchar (40) not null,
+    pontostotais int not null,
+    endereco varchar (60) not null,
+    
+    constraint PK_ALUNO primary key (ra_aluno),
+);
+
+
+create table Professor(
+	ra_professor varchar (6) not null,
+    nome varchar (40) not null,
+    senha varchar (40) not null,
+    
+    constraint PK_PROFESSOR primary key (ra_professor),
+);
+
+create table Produto(
+	id_produto int not null,
+    produto varchar (40) not null,
+    descricao varchar (60) not null,
+    valor_pontos int not null,
+    
+    constraint PK_PRODUTO primary key (id_produto),
+);
+
+create table Tarefa(
+	id_tarefa int not null,
+    nome_tarefa varchar(40) not null,
+    descricao varchar (60) not null,
+    pontos_tarefa int not null,
+    
+    constraint PK_TAREFA primary key (id_tarefa),
+    constraint FK_TAREFA_ALUNO foreign key (ra_aluno) references aluno(ra_aluno),
+);
